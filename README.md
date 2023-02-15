@@ -12,13 +12,18 @@ This contains the code that will read in the random number distributions and plo
 
 ### Dependancies
 **MySort.py**: Used to sort the random numbers in Proj1_Read+Plot.py. Modified from the code provided by Dr. Rogan.
+
 **Random.py**: Used to create random numbers and random number distributions Proj1_Gen+Write.py. Copied from the code provided by Dr. Rogan.
 
 ### Python Packages
 **sys**: Used to read in the command line flags when running the exicutables.
+
 **numpy**: Used to calculate the standard deviation and mean of the distributions. This is also used to produce the random numbers. 
+
 **matplotlib**: Used to produce the plots.
-**scipy.stats**: Used originally to calculate the confidance intervals and like. 
+
+**scipy.stats**: Used originally to calculate the confidance intervals and like.
+
 **math**: Included for good measure.
 
 ## pdf
