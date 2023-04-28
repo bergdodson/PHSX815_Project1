@@ -1,30 +1,27 @@
 # PHSX815_Project1
-My code and LaTeX file for project 1 of PHSX 815. This will answer the question of whether people go bald because of genetics and other factors, or whether it's gnomes that are stealing people's hair. 
+My code and LaTeX file for project 1 of PHSX 815. This will answer the question of whether people go bald because of genetics and other factors, or whether it's gnomes that are stealing people's hair. Please continue reading to orient yourself.
 
-## PHSX815_Project1
-This directory contains the python code for the project. There are two python executables and their dependancies. One executable is responsible for generating the random number distributions and writing them to file. The other executable reads in the flagged file and plots it. The directory also includes .txt files of recorded random number distributions that were used for testing the code as well as the final distributions that were used in the end. 
+## pdf
+This file contains the LaTeX writeup for this project. 
 
-### Proj1_Gen+Write.py
-This contains the code that will create the random numbers and random number distributions. The user flags the number of measurements per experiment (-Nmeas), the number of experiments (-Nexp), -the hypothesis rate (-rate), the random number seed (-seed), and the filename of the file they want to record the data to (-output).   It is heavily influenced by the code that Dr. Rogan shared with us in the course for HW4. 
+## DataSimulations
+This file contains the simulated data for the project. For convenience they will be refered to as "natural.txt" for the H0 theory and "experiement.txt." The flags used to generate them are recorded (roughly) in the filename. 
 
-### Proj1_Read+Plot.py 
-This contains the code that will read in the random number distributions and plot them. This is run with by including the filename of the file to be analyzed as one of the system flags. This is mostly based on the work that we did for HW 4.
+## Figures
+This files contains the .png files used in the LaTeX writup. There is a file for each of the simulated theories and log-likelihood ratio plot. 
 
-### Dependancies
-**MySort.py**: Used to sort the random numbers in Proj1_Read+Plot.py. Modified from the code provided by Dr. Rogan.
+## python
+This file contains all the python code that was used in this project. All dependencies and influence for this code will be explained below.
 
-**Random.py**: Used to create random numbers and random number distributions Proj1_Gen+Write.py. Copied from the code provided by Dr. Rogan.
+### `Proj1_Gen+Write.py`
+This script generates a Poisson distribution based on the rate given to it. It does this by taking flags `-seed`, `-Nmeas`, `-Nexp`, `-output`. `-seed` sets the random seed for the random number generator. `-Nmeas` sets how many measurements to make per experiment. `-Nexp` sets how many experiments will be simulated. `-output` saves the simulated data out to the file specified by the user. It is heavily influenced by the code that Dr. Rogan shared with us in the course for HW4. 
 
-### Python Packages
-**sys**: Used to read in the command line flags when running the exicutables.
+### `Proj1_Read+Plot_v2.py` 
+This contains the code that will read in the random number distributions and plot them. It also calculates the mean, median, and confidence intervals. It also calculates the log-likelihood ratio and plots the results too. The user can control this script using the following flags: `-inputH0` and `-inputH1`. `-inputH0` allows the user to specify which file contains the simulated H0 theory data and `-inputH1` allows the user to do the same for the H1 theory data. This script depends on `Random.py`, `MySort.py` and the python packages `sys`, `numpy`, `matplotlib`, and `scipy`
 
-**numpy**: Used to calculate the standard deviation and mean of the distributions. This is also used to produce the random numbers. 
+### `MySort.py`: Used to sort the simulated data random numbers in `Proj1_Read+Plot_v2.py`. This script is a modified version of code provided by Dr. Rogan.
 
-**matplotlib**: Used to produce the plots.
-
-**scipy.stats**: Used originally to calculate the confidance intervals and like.
-
-**math**: Included for good measure.
+### `Random.py`: Used to create random numbers and random number distributions Proj1_Gen+Write.py. This is a modified version of the code provided earlier by Dr. Rogan.
 
 ## pdf
 This directory contains the latest version of the latex file writeup.
